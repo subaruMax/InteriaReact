@@ -128,7 +128,7 @@
 
 @media (min-width: 1025px) {
   .main {
-    margin: 0 auto;
+    margin-top: 0;
   }
 }
 
@@ -222,7 +222,7 @@
 @media (max-width: 768px) {
   .main {
     width: 768px;
-    .serviceImgage {
+    .serviceImage {
       width: 768px;
       .serviceImageDescription {
         left: 180px;

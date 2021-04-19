@@ -4,7 +4,6 @@ import menuIco from "../../img/menu_icon.svg";
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => (
-  <div>
     <header className={css.bgHeader}>
       <img src={logoBig} alt="Interia" className={css.logoBig} />
       <img src={menuIco} className={css.menuIcon} id="hamburger"></img>
@@ -36,7 +35,6 @@ const NavBar = () => (
         </a>
       </div>
     </header>
-  </div>
 );
 
 export default NavBar;
