@@ -2,6 +2,7 @@
   "name": "interia",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://www.ellisium.com.ua/interia_react",
   "dependencies": {
     "@react-hook/window-size": "^3.0.7",
     "@testing-library/jest-dom": "^5.11.10",
