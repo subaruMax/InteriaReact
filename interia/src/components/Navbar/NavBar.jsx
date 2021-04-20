@@ -17,8 +17,12 @@ const NavBar = () => {
     if (windowWidth > 875) openCloseMenu(false);
   });
 
+  const closeMenuOnClick = (e) => {
+    if (e.target.tagName == "A" && menu) openCloseMenu(false);
+  };
+
   const Nav = (
-    <nav>
+    <nav onClick={closeMenuOnClick}>
       <ul className={menu ? css.burgerMenu : css.menu}>
         <li>
           <NavLink to="/about">
