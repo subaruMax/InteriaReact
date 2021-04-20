@@ -37,24 +37,42 @@ const Services = () => {
   const [description, changeDescription] = useState(descriptions[0]);
   let [currentElement, changeCurrentElement] = useState(0);
   const [currentBackground, changeBackground] = useState(images[0][0]);
-
+  // delay scrolling
   const delayedScroll = useRef(_.debounce((e) => changeInfoOnScroll(e), 500))
     .current;
   const changeOnScroll = (e) => delayedScroll(e);
 
-  useEffect(() => {
+  // calculate image index according to resolution
+  function calcImgIndex() {
     if (windowWidth <= 375) changeImgIndex(2);
     else if (windowWidth <= 834) changeImgIndex(1);
     else if (windowWidth > 834) changeImgIndex(0);
-    console.log(windowWidth);
-  }, [windowWidth]);
+    console.log(imageIndex);
+  }
 
+  // reload image according to resolution if index(resolution) change
+  useEffect(() => {
+    changeBackground(images[currentElement][imageIndex]);
+  }, [imageIndex]);
+
+  // preload images into cache
+  useEffect(() => {
+    calcImgIndex();
+    images.forEach((image) => {
+      const newImage = new Image();
+      newImage.src = image[imageIndex];
+      window[image[imageIndex]] = newImage;
+    });
+  });
+
+  // change image on click
   const changeInfoOnClick = (e) => {
     changeDescription(descriptions[e.target.id]);
     changeCurrentElement(e.target.id);
     changeBackground(images[e.target.id][imageIndex]);
   };
 
+  // change image on scroll
   const changeInfoOnScroll = (e) => {
     if (e.deltaY < 0 && currentElement > 0) {
       changeCurrentElement(--currentElement);
@@ -81,7 +99,7 @@ const Services = () => {
           className={css.scrollInfoArrow}
         />
       </div>
-      <div id="servicePicker" className={css.servicePicker}>
+      <div className={css.servicePicker}>
         <a
           href="#"
           id="0"
@@ -118,10 +136,9 @@ const Services = () => {
       <div
         className={css.serviceImgage}
         style={{ backgroundImage: `url(${currentBackground})` }}
-        id="mainIMG"
       >
         <div className={css.serviceImageDescription}>
-          <p id="mainIMGdescription">{description}</p>
+          <p>{description}</p>
           <a href="#">
             More <img src={arrowSmall} alt="arrow" />
           </a>
