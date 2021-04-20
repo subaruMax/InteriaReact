@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useWindowWidth } from "@react-hook/window-size/throttled";
 
-const NavBar = () => {
+const NavBar = (props) => {
   const [menu, openCloseMenu] = useState(false);
   const windowWidth = useWindowWidth();
   const toggleMenu = () => {
@@ -25,17 +25,17 @@ const NavBar = () => {
     <nav onClick={closeMenuOnClick}>
       <ul className={menu ? css.burgerMenu : css.menu}>
         <li>
-          <NavLink to="/about">
+          <NavLink to="/about" activeClassName={css.menuActive}>
             about <div className={css.underline}></div>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/services" className={css.menuActive}>
+          <NavLink to="/services" activeClassName={css.menuActive}>
             services <div className={css.underline}></div>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/projects">
+          <NavLink to="/projects" activeClassName={css.menuActive}>
             projects <div className={css.underline}></div>
           </NavLink>
         </li>
@@ -50,10 +50,20 @@ const NavBar = () => {
         <img src={menuIco} className={css.menuIcon} onClick={toggleMenu}></img>
         {menu ? null : Nav}
         <div className={css.languageSel}>
-          <a href="#" className={css.langActive}>
+          <a
+            href="#"
+            className={props.language == "en" ? css.langActive : null}
+            onClick={() => props.changeLanguage("en")}
+          >
             en
           </a>
-          <a href="#">ru</a>
+          <a
+            href="#"
+            className={props.language == "ru" ? css.langActive : null}
+            onClick={() => props.changeLanguage("ru")}
+          >
+            ru
+          </a>
         </div>
       </header>
       {menu ? Nav : null}

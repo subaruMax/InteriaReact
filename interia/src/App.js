@@ -1,14 +1,15 @@
 import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "./components/Navbar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Services from "./components/Services/Services";
 function App() {
+  const [language, changeLanguage] = useState("en");
   return (
     <div className="App">
       <BrowserRouter basename="/interia_react/">
-        <NavBar />
+        <NavBar language={language} changeLanguage={changeLanguage} />
         <main>
           <Route exact path="/"></Route>
           <Route path="/about"></Route>
