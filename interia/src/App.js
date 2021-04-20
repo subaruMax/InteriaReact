@@ -5,6 +5,7 @@ import NavBar from "./components/Navbar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Services from "./components/Services/Services";
 import About from "./components/About/About";
+import Projects from "./components/Projects/Projects";
 function App() {
   const [language, changeLanguage] = useState("en");
   return (
@@ -12,12 +13,10 @@ function App() {
       <BrowserRouter basename="/interia_react/">
         <NavBar language={language} changeLanguage={changeLanguage} />
         <main>
-          <Route exact path="/"></Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/services" render={() => <Services />}></Route>
-          <Route path="/projects"></Route>
+          <Route exact path="/" />
+          <Route path="/about" render={() => <About />} />
+          <Route path="/services" render={() => <Services />} />
+          <Route path="/projects" render={() => <Projects />} />
         </main>
         <Footer />
       </BrowserRouter>
