@@ -2,7 +2,7 @@
   position: relative;
   margin: auto;
   width: 1440px;
-  height: 112px;
+  min-height: 112px;
   display: flex;
 }
 .logoBig {
@@ -10,9 +10,7 @@
   height: 60px;
   margin: 26px 0 26px 86px;
 }
-.menuBtn {
-  display: none;
-}
+
 .menuIcon {
   display: none;
 }
@@ -49,11 +47,9 @@
 }
 
 .burgerMenu {
-  display: none;
-}
-
-.showMenu {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   flex-direction: column;
   font-family: Tenor Sans;
@@ -64,10 +60,13 @@
   text-transform: uppercase;
   border-top: 1px solid #979797;
   border-bottom: 1px solid #979797;
-  margin-bottom: 60px;
-  a {
-    color: #282a28;
+  margin-bottom: 50px;
+  li {
     margin: 20px auto;
+  }
+  a {
+    font-size: 24px;
+    color: #282a28;
     &.menuActive {
       color: #d3c1ac;
     }
@@ -82,6 +81,7 @@
   width: 64px;
   height: 21px;
   margin: 44px 152px 47px 515px;
+  order: 2;
   a {
     font-family: Tenor Sans;
     font-style: normal;

@@ -37,6 +37,7 @@ const Services = () => {
   const [description, changeDescription] = useState(descriptions[0]);
   let [currentElement, changeCurrentElement] = useState(0);
   const [currentBackground, changeBackground] = useState(images[0][0]);
+ 
   // delay scrolling
   const delayedScroll = useRef(_.debounce((e) => changeInfoOnScroll(e), 500))
     .current;
