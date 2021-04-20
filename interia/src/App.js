@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Redirect, Route } from "react-router-dom";
 import React, { useState } from "react";
 import NavBar from "./components/Navbar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -13,7 +13,9 @@ function App() {
       <BrowserRouter basename="/interia_react/">
         <NavBar language={language} changeLanguage={changeLanguage} />
         <main>
-          <Route exact path="/" />
+          <Route exact path="/">
+            <Redirect to="/about"></Redirect>
+          </Route>
           <Route path="/about" render={() => <About />} />
           <Route path="/services" render={() => <Services />} />
           <Route path="/projects" render={() => <Projects />} />
