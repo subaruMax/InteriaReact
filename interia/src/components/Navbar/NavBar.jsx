@@ -44,8 +44,8 @@ const NavBar = (props) => {
   );
 
   return (
-    <div>
-      <header className={menu ? `${css.bgHeader} ${css.opened}` : css.bgHeader}>
+    <header>
+      <div className={menu ? `${css.bgHeader} ${css.opened}` : css.bgHeader}>
         <img src={logoBig} alt="Interia" className={css.logoBig} />
         <img src={menuIco} className={css.menuIcon} onClick={toggleMenu}></img>
         {menu ? null : Nav}
@@ -65,9 +65,9 @@ const NavBar = (props) => {
             ru
           </a>
         </div>
-      </header>
+      </div>
       {menu ? Nav : null}
-    </div>
+    </header>
   );
 };
 

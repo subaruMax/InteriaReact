@@ -155,6 +155,10 @@ a {
     flex-direction: column;
 }
 
+main {
+    height: 598px;
+}
+
 
 @media (min-width: 1025px) {
     body {
@@ -172,6 +176,9 @@ a {
         width: 1024px;
         height: auto;
     }
+    main {
+        margin: 0;
+    }
 }
 
 
@@ -184,6 +191,11 @@ a {
         width: 834px;
         height: 1194px;
     }
+    main {
+        height: 825px;
+        margin: 22px 0 63px 0;
+    }
+
 }
 
 
@@ -191,6 +203,7 @@ a {
     body {
         width: 768px;
     }
+    
 }
 
 
@@ -208,6 +221,10 @@ a {
     body {
         width: 375px;
         height: 812px;
+    }
+    main {
+        height: 534.21px;
+        margin-bottom: 0;
     }
 }
 

@@ -4,6 +4,7 @@
   width: 1440px;
   height: 96px;
   margin: 0;
+  margin-top: auto;
   background: #fafaf9;
   .logoSmall {
     width: 42px;
@@ -96,7 +97,7 @@
     height: 172px;
     flex-wrap: nowrap;
     .logoSmall {
-      margin: auto 123px auto 41px;
+      margin: auto 127px auto 41px;
     }
     .container {
       display: flex;
@@ -112,12 +113,12 @@
 
     .contacts.container {
       flex-direction: column;
-      justify-content: start;
+      justify-content: center;
       align-items: flex-start;
       flex-wrap: nowrap;
       width: 211px;
-      height: 88px;
-      margin: auto 212.6px auto 0;
+      height: 172px;
+      margin: auto 210px auto 0;
     }
 
     .address.container {
@@ -197,6 +198,7 @@
     width: 375px;
     height: 160px;
     flex-wrap: wrap;
+    margin-top: 22px;
     .logoSmall {
       width: 33.45px;
       height: 24px;
